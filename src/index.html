@@ -4,8 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sofia&effect=fire|emboss|outline|shadow-multiple|neon">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire|emboss|outline|shadow-multiple|neon">
 	<title>Welcome to Deepcode</title>
+	<script type="text/javascript" src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<base target="_blank">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="icon" type="text/css" href="ghost.png">
 	<style>
 		body {
 			background: #ffffff url(back.jpg) no-repeat center;
@@ -64,6 +69,105 @@
 				outline: 3px solid red; 
 				outline-offset: 5px;
 		}
+		a:link.a1,a:visited.a1{
+			width: 100px;
+			display: inline-block;
+			color: black;
+			border: 2px solid green;
+			background-color: white;
+			padding: 10px 8px;
+			text-align: center;
+			margin-left: 20px;
+			box-sizing: border-box;
+			text-decoration: none;
+		}
+		a:hover.a1, a:active.a1{
+			width: 100px;
+			text-align: center;
+			margin-left: 20px;
+			box-sizing: border-box;
+			padding: 10px 8px;
+			display: inline-block;
+			background-color: green;
+			color: white;
+			text-decoration: none;
+		}
+		a:link.a2,a:visited.a2{
+			display: inline-block;
+			width: 100px;
+			box-sizing: border-box;
+			text-align: center;
+			color: white;
+			background-color: #FF6766;
+			text-decoration: none;
+		}
+		a:hover.a2,a:active.a2{
+			display: inline-block;
+			width: 100px;
+			box-sizing: border-box;
+			text-align: center;
+			color: white;
+			background-color: #CF000F;
+			text-decoration: none;
+		}
+		ul.red{
+			width: 100px;
+			list-style-type: disc;
+			list-style-position: outside;
+			background-color: #FF6766;
+			margin: 20px;
+			padding: 20px;
+		}
+		li.red{
+			width: 100px;
+			background-color:#CF000F ;
+			color: white;
+			font-size: 15px;
+			letter-spacing: 1px;
+		}
+		ol{
+			list-style-type: upper-roman;
+			list-style-position: outside;
+		}
+		li.none{
+			 background-color: white;
+		}
+		ol.none{
+			width: 100px;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		table{
+			margin-left: 50px;
+			text-align: center;
+			width: 100%;
+		}
+		th{
+			font-family: Sofia,sans-serif;
+			text-align: center;
+			vertical-align: middle;
+			background-color: green;
+			color: white;
+			font-size: 20px;
+		}
+		td: {
+			padding: 10px;
+			text-align: center;
+			vertical-align: middle;
+		}
+		tr{
+			font-size:18px ;
+			border-bottom: 1px solid #ddd;
+
+		}
+		
+		tr:nth-child(odd){
+			background-color: #D2D7D3;
+		}
+		tr:hover{
+			background-color:coral ;
+		}
 	</style>
 	
 </head>
@@ -86,6 +190,100 @@
 	<div class="div1">
 		<div style="font-family: Chiller;text-align: center; font-weight: bold;text-transform: uppercase;font-size: 2em;color: whitesmoke;text-shadow: 2px 2px 2px red;">Hey, let's learn alphabet together</div><br>
 		<div class="divalphabet font-effect-fire">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+	</div>
+	<i class="fas fa-cloud"></i>
+	<i class="glyphicon glyphicon-cloud"></i>
+	<i class="glyphicon glyphicon-remove"></i>
+	<i class="glyphicon glyphicon-user"></i>
+	<i class="material-icons">cloud</i>
+	<i class="material-icons">traffic</i>
+	<div>
+		<a class="a1" href="http://google.com">GOOGLE</a>
+		<a class="a2" href="http://facebook.com">FACEBOOK</a>
+		<span style="cursor:pointer;">hand</span>
+	</div>
+	<div>
+			<ul class="red">
+				<li class="red">Coffee</li>
+				<li class="red">Juice</li>
+				<li class="red">Milk tea</li>
+			</ul>
+			<ol>
+				<li>Coffee</li>
+				<li>Juice</li>
+				<li>Milk tea</li>
+			</ol>
+			<ol class="none">
+				<li class="none">Coffee</li>
+				<li class="none">Juice</li>
+				<li class="none">Milk tea</li>
+			</ol>
+	</div>
+	<div style="width: 500px;height: 200px; overflow-x: auto; overflow-y: auto;">
+		<table>
+			<th>Name</th>
+			<th>Score1</th>
+			<th>Score2</th>
+			<th>Score3</th>
+			<th>Score4</th>
+			<th>Score5</th>
+			<tr>
+				<td>Nam</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+			<tr>
+				<td>Tien</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+			</tr>
+			<tr>
+				<td>Nga</td>
+				<td>80</td>
+				<td>80</td>
+				<td>80</td>
+				<td>80</td>
+				<td>80</td>
+			</tr>
+			<tr>
+				<td>Hao</td>
+				<td>70</td>
+				<td>70</td>
+				<td>70</td>
+				<td>70</td>
+				<td>70</td>
+			</tr>
+			<tr>
+				<td>Van</td>
+				<td>60</td>
+				<td>60</td>
+				<td>60</td>
+				<td>60</td>
+				<td>60</td>
+			</tr>
+			<tr>
+				<td>Thoa</td>
+				<td>50</td>
+				<td>50</td>
+				<td>50</td>
+				<td>50</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>Dai</td>
+				<td>40</td>
+				<td>40</td>
+				<td>40</td>
+				<td>40</td>
+				<td>40</td>
+			</tr>
+		</table>
 	</div>
 	
 </body>
