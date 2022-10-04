@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sofia&effect=emboss|outline|shadow-multiple">
+    <title>Test</title>
+    <style type="text/css">
+        .divheader{
+            width: 300px;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            background-color: black;
+            border: 2px solid whitesmoke;
+            margin: auto;
+            position: sticky;
+            top: 0;
+        }
+        .divchat{
+            width: 300px;
+            position: fixed;
+            bottom: ;
+            right: 0;
+            border: 2px solid blue;
+        }
+        label{
+            color: coral;
+            font-family: Sofia,sans-serif;
+            font-variant: small-caps;
+            font-size: xx-large;
+        }
+        input[type="text"]{
+            border: none;
+            outline: none;
+            border-bottom: 1px solid coral;
+            color: greenyellow;
+            text-decoration-style: dotted ;
+            text-decoration-line: underline;
+            text-decoration-thickness: medium ;
+            font-family: Sofia, sans-serif;
+        }
+        .box{
+            float: left;
+            padding: 50px;
+            margin-left: 30px;
+            width: 50%;
+        }
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+<div class="divheader font-effect-outline">Deepcode
+</div>
+<div class="divchat">borderchat</div>
+<div style="width: 500px;height: 500px;">
+    <form>
+        <fieldset>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" size="50" maxlength="50" required>
+            <label for="mail">E-mail</label>
+            <input type="E-mail" name="mail" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <select name="course">
+                <option name="course" value="html">HTML</option>
+                <option name="course" value="css">CSS</option>
+                <option name="course" value="jv">JV</option>
+            </select>
+
+        </fieldset>
+    </form>
+</div>
+<div class="clearfix">
+    <div class="box" style="background-color: red;"></div>
+      <div class="box" style="background-color: blueviolet;"></div>
+</div>
+<div style="height: 1000px;"></div>
+</body>
+</html>
