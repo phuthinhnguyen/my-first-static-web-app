@@ -264,6 +264,89 @@
 			animation-direction: alternate-reverse;
 			animation-fill-mode: forwards;
 		}
+		.img{
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 70%;
+		}
+		.img:hover{
+			transform: scaleX(-1);
+		}
+
+		.imgthumbnail{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			padding: 5px;
+		}
+		.imgthumbnail:hover{
+			box-shadow: 0 0 3px 2px rgba(0, 140, 186, 0.5);
+		}
+		.blur{
+			filter: blur(5px);
+		}
+		.brightness{
+			filter: brightness(250%);
+		}
+		.grayscale{
+			filter: grayscale(100%);
+		}
+		.contrast{
+			filter: contrast(100%);
+		}
+		.invert{
+			filter: invert(100%);
+		}
+		.opacity{
+			filter: opacity(50%);
+		}
+		.sepia{
+			filter: sepia(100%);
+		}
+		.shadow{
+			filter: drop-shadow(8px 8px 10px green);
+		}
+		.imgfadeinaboxcontainer{
+		 	position: relative;
+  		width: 300px;
+  		height: 300px;
+		}
+		.image{
+		  opacity: 1;
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  transition: .5s ease;
+		  backface-visibility: hidden;
+		}
+		.middle {
+		  transition: .5s ease;
+		  opacity: 0;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%)
+		}
+		.text{
+			background-color: #4CAF50;
+		  color: white;
+		  font-size: 16px;
+		  padding: 16px 32px;
+		}
+		.imgfadeinaboxcontainer:hover .image {
+			opacity: 0.3;
+		}
+		.imgfadeinaboxcontainer:hover .middle{
+			opacity: 1;
+		}
+	
+	
 	</style>
 	
 </head>
@@ -486,6 +569,24 @@
 	</div>
 	<div class="transition"></div>
 	<div class="animation"></div>
+	<img class="img" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="blur" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="brightness" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="grayscale" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="contrast" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="invert" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="opacity" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="sepia" src="ghost.png" alt="thinh" width="150px" height="150px">
+	<img class="shadow" src="ghost.png" alt="thinh" width="150px" height="150px">
+
+	<a href="ghost.png"><img class="imgthumbnail" src="ghost.png" alt="thinh" width="150px" height="150px"></a>
+	<div class="imgfadeinaboxcontainer">
+		<img class="image" src="ghost.png" width="100px" height="100px" alt="thinh" >
+		<div class="middle">
+				<div class="text">Ghost</div>
+		</div>
+	</div>
+	
 </body>
 
 </html> 
