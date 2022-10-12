@@ -345,8 +345,27 @@
 		.imgfadeinaboxcontainer:hover .middle{
 			opacity: 1;
 		}
-	
-	
+		.pagnitation{
+			display: inline-block;
+		}
+		.pagnitation a{
+			color: black;
+			text-decoration: none;
+			background-color: white;
+			border: none;
+			font-size:xx-large;
+			padding:10px;	
+			transition-duration: 4s;
+		}
+		.pagnitation a:hover{
+			background-color:black;	
+		}
+		.pagnitaion a:active{
+			background-color:green;
+		}
+		.pagnitation a:hover:not (.active){
+			background-color:black;
+		}
 	</style>
 	
 </head>
@@ -585,6 +604,14 @@
 		<div class="middle">
 				<div class="text">Ghost</div>
 		</div>
+	</div>
+	<div class="pagnitation">
+		<a href="#"><<</a>
+		<a class="active" href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">></a>
 	</div>
 	
 </body>
