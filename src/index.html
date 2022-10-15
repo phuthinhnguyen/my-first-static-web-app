@@ -366,26 +366,47 @@
 		.columns{
 			column-count: 3;
 			column-gap: 20px;
-			column-rule: 1px solid gold;
+			column-rule: 1px solid var(--green);
 		}
 		.columnsspan{
 			column-span: all;
 		}
-		@media screen and (max-width:600px){
-			background-color: rgba(100,100,100,0.6);
+		:root{
+			--green: rgb(0,100,0);
 		}
-		@media screen and (max-width:480px){
-			background-color: rgba(100,100,100,0.6);
+		@media screen and (max-width: 992px){
+			body{
+				background-color: black;
+			}
 		}
-		@media screen and (max-width:767px){
-			background-color: rgba(100,0,0,0.6);
+		@media screen and (min-width: 600px){
+			body{
+				background-color: olive;
+			}
 		}
-		@media screen and (max-width:1024px){
-			background-color: rgba(0,100,0,0.6);
+		@media only screen and (orirentation: landscape){
+			body{
+				background-color: blue;
+			}
 		}
-		@media screen and (max-width:1280px){
-			background-color: rgba(0,0,100,0.6);
+		.flex-container{
+			height: 200px;
+			display: flex;
+			flex-flow: row wrap;
+			background-color: black;
+			justify-content: center;
+			
 		}
+		.flex-container > div{
+			width: 300px;
+			margin: 10px;
+			background-color: white;
+			color: black;
+			font-size: xx-large;
+			text-align: center;
+			line-height: 75px;
+		}
+
 	</style>
 	
 </head>
@@ -657,10 +678,16 @@
 		<a href="#">5</a>
 		<a href="#">>></a>
 	</div>
-	<div class="columns" style="width: 50%;height: 200px;resize: vertical;overflow: auto;">
+	<div class="columns" style="width: 50%;height: 200px;resize: vertical;overflow: auto;resize: none;">
 		<h2 class="columnsspan">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h2>
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
 	</div>
+	<div class="flex-container">
+		<div style="order:3;flex:0 0 400px;align-self: center;">Box 1</div>
+		<div style="order:2">Box 2</div>
+		<div style="order:1">Box 3</div>
+	</div>
+
 </body>
 
 </html> 
