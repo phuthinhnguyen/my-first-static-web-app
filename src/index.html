@@ -416,7 +416,18 @@
 			text-align: center;
 			line-height: 75px;
 		}
-
+		.flexbox-container{
+			display:flex;
+			flex-flow: row wrap;
+			justify-content:center;
+			align-items:center;
+			background-color:rgba(0,100,0,0.5);	
+		}
+		.flexbox-container > div{
+			background-color:black;
+			border: 5px solid white;
+			box-shadow: 0 0 2px 1px rgba(0, 140,60,0,6)
+		}
 	</style>
 	
 </head>
@@ -697,7 +708,10 @@
 		<div style="order:2">Box 2</div>
 		<div style="order:1">Box 3</div>
 	</div>
-
+	<div class="flexbox-container">
+		<div style="order:2;flex:0 0 100px;align-self:center;columns-count:2;colums-gap:10px;columns-rule: 3px solid green;">a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering</div>
+		<div>Flexbox 2</div>
+	</div>
 </body>
 
 </html> 
