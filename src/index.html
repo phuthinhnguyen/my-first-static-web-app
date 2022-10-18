@@ -17,6 +17,9 @@
 			background-attachment: fixed;
 			counter-reset: section;
 		}
+		*{
+			box-sizing: border-box;
+		}
 		.spanquestion {
 			border-left: 10px solid red;
 			background: lightblue;
@@ -374,22 +377,12 @@
 		:root{
 			--green: rgb(0,100,0);
 		}
-		@media screen and (max-width: 600px){
-			body{
-				background-color: pink;
-			}
-		}
-		@media screen and (max-width: 768px){
-			body{
-				background-color: pink;
-			}
-		}	
-		@media screen and (min-width: 992px){
+		@media screen and (max-width: 992px){
 			body{
 				background-color: black;
 			}
 		}
-		@media screen and (min-width: 1200px){
+		@media screen and (min-width: 600px){
 			body{
 				background-color: olive;
 			}
@@ -417,17 +410,30 @@
 			line-height: 75px;
 		}
 		.flexbox-container{
-			display:flex;
+			display: flex;
 			flex-flow: row wrap;
-			justify-content:center;
-			align-items:center;
-			background-color:rgba(0,100,0,0.5);	
+			justify-content: space-around;
+			align-items: center;
+			background-color: lightskyblue;
+			height: 300px;
 		}
-		.flexbox-container > div{
-			background-color:black;
-			border: 5px solid white;
-			box-shadow: 0 0 2px 1px rgba(0, 140,60,0,6)
+		.flexbox-container-box1{
+			background-color: black;
+			border: 3px solid white;
+			padding: 5px;
+			width: 70%;
+			height: 100%;
+
 		}
+		.flexbox-container-box2{
+		background-color: black;
+		border: 3px solid white;
+		padding: 5px;
+		width: 30%;
+		height: 100%;
+
+		}
+	
 	</style>
 	
 </head>
@@ -709,8 +715,11 @@
 		<div style="order:1">Box 3</div>
 	</div>
 	<div class="flexbox-container">
-		<div style="order:2;flex:0 0 100px;align-self:center;columns-count:2;colums-gap:10px;columns-rule: 3px solid green;">a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering</div>
-		<div>Flexbox 2</div>
+		<div class="flexbox-container-box1" style="order: 2; column-count: 3;column-gap: 15px;column-rule: 3px solid green;">
+			<h1 style="column-span: all;text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h1>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+	</div>
+		<div class="flexbox-container-box2" style="order:1;">Box 2</div>
 	</div>
 </body>
 
