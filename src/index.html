@@ -31,6 +31,8 @@
 			font-family: Chiller;
 		}
 		.divtitle {
+			position: sticky;
+			top: 5px;
 			border: 3px inset ghostwhite;
 			background: black;
 			width: 300px;
@@ -384,12 +386,12 @@
 		}
 		@media screen and (min-width: 600px){
 			body{
-				background-color: olive;
+				background-color: black;
 			}
 		}
 		@media only screen and (orirentation: landscape){
 			body{
-				background-color: blue;
+				background-color: black;
 			}
 		}
 		.flex-container{
@@ -431,9 +433,39 @@
 		padding: 5px;
 		width: 30%;
 		height: 100%;
-
 		}
-	
+		.item1{
+			grid-area: header;
+		}
+		.item2{
+			grid-area: menu;
+		}
+		.item3{
+			grid-area: main;
+		}
+		.item4{
+			grid-area: right;
+		}
+		.item5{
+			grid-area: footer;
+		}
+		.grid-container{
+			display:grid;
+			background-color: black;
+			grid-template-areas: 
+					'header header header header header'
+					'menu main main main right'
+					'menu main main main right'
+					'menu footer footer footer footer';
+			width: 100%;
+			height: 200px;
+			margin-top: 20px;
+		}
+		.grid-container > div{
+			text-align: center;
+			font-size: 30px;
+			border: 2px solid ghostwhite;
+		}
 	</style>
 	
 </head>
@@ -720,6 +752,24 @@
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
 	</div>
 		<div class="flexbox-container-box2" style="order:1;">Box 2</div>
+	</div>
+	<div style="display: grid;grid-column-gap: 10px;grid-template-columns: auto auto auto auto;background-color: black;width: 100%;height: 200px;">
+		<div style="border:2px solid blue;text-align: center;grid-column: 1/3;">Box1</div>
+		<div style="border:2px solid blue;text-align: center;">Box2</div>
+		<div style="border:2px solid blue;text-align: center;">Box3</div>
+		<div style="border:2px solid blue;text-align: center;grid-row: 2/span 2;">Box4</div>
+		<div style="border:2px solid blue;text-align: center;">Box5</div>
+		<div style="border:2px solid blue;text-align: center;">Box6</div>
+		<div style="border:2px solid blue;text-align: center;">Box7</div>
+		<div style="border:2px solid blue;text-align: center;">Box8</div>
+		<div style="border:2px solid blue;text-align: center;">Box9</div>
+	</div>
+	<div class="grid-container">
+		<div class="item1">Header</div>
+		<div class="item2">Menu</div>
+		<div class="item3">Main</div>
+		<div class="item4">Right</div>
+		<div class="item5">Footer</div>
 	</div>
 </body>
 
