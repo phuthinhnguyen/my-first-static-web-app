@@ -36,6 +36,7 @@
 		}
 
 
+
     </style>
     
 </head>
@@ -74,6 +75,7 @@
 				this.left=left;
 				this.starttop=roundNearest5(divheight/2)-50;
 				this.startleft=roundNearest5(divwidth)-50;
+			
 			}
 			startpointtop()
 			{	
@@ -98,6 +100,14 @@
 			}
 			moveright(){
 				this.left+=50;
+			}
+			heroname(name){
+				this.name= name;
+				return this.name;
+			}
+			herotime(time){
+				this.time=time;
+				return this.time;
 			}
 		}
 		class Cat{
@@ -207,6 +217,7 @@
 		myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
 		let score=0;
 		let timeout=61;
+		let storename=[];
 		let cuongthitop=0;
 		let cuongthileft=0;
 		let cuongthistatus=true;
@@ -433,6 +444,12 @@
 			}
 			else if (score>=50){
 				alert("Thắng. Good job, bro!");
+				let winnername = prompt("Mời nhập tên:");
+				if (typeof(Storage) !== "undefined") 
+				{	
+					storename.push(winnername);
+					localStorage.setItem(hero.heroname(winnername), hero.herotime(timeout));
+				} 
 				score=0;
 				timeout=61;
 				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
