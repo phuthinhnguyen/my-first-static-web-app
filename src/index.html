@@ -14,9 +14,9 @@
 		}
 		
 		#myDiv{
-			border: 10px solid wheat;
 			width: 1400px;
 			height: 700px;
+		
 			
 		}
 		#score, #time{
@@ -27,6 +27,12 @@
 			margin-top: 20px;
 			margin-right: 50px;
 			
+		}
+		#ghost {
+			filter: drop-shadow(10px 10px 10px red);
+		}
+		#cuongthi{
+			filter: drop-shadow(10px 10px 10px red);
 		}
 
 
@@ -46,12 +52,21 @@
 			<div id="rose"></div>
 			<div id="love"></div>
 			<div id="black"></div>
+			<div id="black2"></div>
+			<div id="black3"></div>
 			<div id="cuongthi"></div>
 		</div>
 		<div id="score">Score: 0</div>
 		<div id="time">Time: 0</div>
+		<audio autoplay>
+			<source src="game.mp3">
+	  </audio>
 
 	<script>
+		 window.onload = function() {
+      var context = new AudioContext();
+    }
+	
 		class Hero{
 			constructor(size,top,left){
 				this.size=size;
@@ -146,6 +161,18 @@
 				this.blackleft=blackleft;
 			}
 		}
+		class Black2{
+			constructor(black2top,black2left){
+				this.black2top=black2top;
+				this.black2left=black2left;
+			}
+		}
+		class Black3{
+			constructor(black3top,black3left){
+				this.black3top=black3top;
+				this.black3left=black3left;
+			}
+		}
 		
 		class Cuongthi{
 			constructor(cuongthitop,cuongthileft,status=true){
@@ -162,7 +189,7 @@
 		}
 		let divheight = document.getElementById('myDiv').clientHeight;
 		let divwidth = document.getElementById('myDiv').clientWidth;
-	
+		
 		let hero = new Hero(50,roundNearest5(divheight/2)-50,roundNearest5(divwidth)-50);
 		let cat = new Cat(roundNearest5(divheight/10),50);
 		let type = new Type(roundNearest5(divheight/3),50);
@@ -174,6 +201,8 @@
 		let rose = new Rose(roundNearest5(divheight-500),50);
 		let love = new Love(roundNearest5(divheight-600),50);
 		let black = new Black(roundNearest5(divheight-100),50);
+		let black2 = new Black2(roundNearest5(divheight-250),50);
+		let black3 = new Black3(roundNearest5(divheight-300),50);
 		let myghost = document.getElementById("ghost");
 		myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
 		let score=0;
@@ -189,7 +218,7 @@
 			let y = Math.floor(Math.random()*(divwidth));
 			let cuongthi=new Cuongthi(roundNearest5(x),roundNearest5(y));
 			let mycuongthi=document.getElementById("cuongthi");
-			mycuongthi.innerHTML=`<img src="cuongthi.jpg" alt="cuongthi" style="width: 100px;height:100px;top:${cuongthi.cuongthitop}px;left:${cuongthi.cuongthileft}px;">`;
+			mycuongthi.innerHTML=`<img src="ma.png" alt="cuongthi" style="width: 100px;height:100px;top:${cuongthi.cuongthitop}px;left:${cuongthi.cuongthileft}px;">`;
 			cuongthitop=cuongthi.cuongthitop;
 			cuongthileft=cuongthi.cuongthileft;
 			cuongthistatus=cuongthi.status;
@@ -209,7 +238,7 @@
 		
 		function catrun(){
 			let myback = document.getElementById("back");
-			myback.innerHTML=`<img src="back.jpg" alt="back" style="width:50px;height:50px;top:${cat.cattop}px;left:${cat.catleft}px;border-radius:20px">`;
+			myback.innerHTML=`<img src="cuongthi.jpg" alt="back" style="width:70px;height:70px;top:${cat.cattop}px;left:${cat.catleft}px;border-radius:20px">`;
 			cat.catleft+=50;
 			if (cat.catleft>divwidth-50){
 				cat.catleft=50;
@@ -218,7 +247,7 @@
 
 		function typerun(){
 			let mytype = document.getElementById("type");
-			mytype.innerHTML=`<img src="typing.png" alt="type" style="width:50px;height:50px;top:${type.typetop}px;left:${type.typeleft}px;">`;
+			mytype.innerHTML=`<img src="cuongthi.jpg" alt="type" style="width:70px;height:70px;top:${type.typetop}px;left:${type.typeleft}px;">`;
 			type.typeleft+=50;
 			if (type.typeleft>divwidth-50){
 				type.typeleft=50;
@@ -227,7 +256,7 @@
 
 		function meo2run(){
 			let mymeo2 = document.getElementById("meo2");
-			mymeo2.innerHTML=`<img src="meo2.jpg" alt="meo2" style="width:50px;height:50px;top:${meo2.meo2top}px;left:${meo2.meo2left}px;border-radius:10px">`;
+			mymeo2.innerHTML=`<img src="cuongthi.jpg" alt="meo2" style="width:70px;height:70px;top:${meo2.meo2top}px;left:${meo2.meo2left}px;border-radius:10px">`;
 			meo2.meo2left+=50;
 			if (meo2.meo2left>divwidth-50){
 				meo2.meo2left=50;
@@ -236,7 +265,7 @@
 
 		function chorun(){
 			let mycho = document.getElementById("cho");
-			mycho.innerHTML=`<img src="cho.jpg" alt="cho" style="width:50px;height:50px;top:${cho.chotop}px;left:${cho.choleft}px;">`;
+			mycho.innerHTML=`<img src="cuongthi.jpg" alt="cho" style="width:70px;height:70px;top:${cho.chotop}px;left:${cho.choleft}px;">`;
 			cho.choleft+=50;
 			if (cho.choleft>divwidth-50){
 				cho.choleft=50;
@@ -254,7 +283,7 @@
 
 		function setrun(){
 			let myset = document.getElementById("set");
-			myset.innerHTML=`<img src="set.jpg" alt="set" style="width:50px;height:50px;top:${set.settop}px;left:${set.setleft}px;">`;
+			myset.innerHTML=`<img src="cuongthi.jpg" alt="set" style="width:70px;height:70px;top:${set.settop}px;left:${set.setleft}px;">`;
 			set.setleft+=50;
 			if (set.setleft>divwidth-50){
 				set.setleft=50;
@@ -263,7 +292,7 @@
 
 		function lightrun(){
 			let mylight = document.getElementById("light");
-			mylight.innerHTML=`<img src="light.jpg" alt="light" style="width:50px;height:50px;top:${light.lighttop}px;left:${light.lightleft}px;">`;
+			mylight.innerHTML=`<img src="cuongthi.jpg" alt="light" style="width:70px;height:70px;top:${light.lighttop}px;left:${light.lightleft}px;">`;
 			light.lightleft+=50;
 			if (light.lightleft>divwidth-50){
 				light.lightleft=50;
@@ -272,7 +301,7 @@
 
 		function roserun(){
 			let myrose = document.getElementById("rose");
-			myrose.innerHTML=`<img src="rose.jpg" alt="rose" style="width:50px;height:50px;top:${rose.rosetop}px;left:${rose.roseleft}px;">`;
+			myrose.innerHTML=`<img src="cuongthi.jpg" alt="rose" style="width:70px;height:70px;top:${rose.rosetop}px;left:${rose.roseleft}px;">`;
 			rose.roseleft+=50;
 			if (rose.roseleft>divwidth-50){
 				rose.roseleft=50;
@@ -281,7 +310,7 @@
 
 		function loverun(){
 			let mylove = document.getElementById("love");
-			mylove.innerHTML=`<img src="love.jpg" alt="love" style="width:50px;height:50px;top:${love.lovetop}px;left:${love.loveleft}px;">`;
+			mylove.innerHTML=`<img src="cuongthi.jpg" alt="love" style="width:70px;height:70px;top:${love.lovetop}px;left:${love.loveleft}px;">`;
 			love.loveleft+=50;
 			if (love.loveleft>divwidth-50){
 				love.loveleft=50;
@@ -294,6 +323,24 @@
 			black.blackleft+=50;
 			if (black.blackleft>divwidth-50){
 				black.blackleft=50;
+			}
+		}
+
+		function black2run(){
+			let myblack2 = document.getElementById("black2");
+			myblack2.innerHTML=`<img src="cuongthi.jpg" alt="black2" style="width:70px;height:70px;top:${black2.black2top}px;left:${black2.black2left}px;">`;
+			black2.black2left+=50;
+			if (black2.black2left>divwidth-50){
+				black2.black2left=50;
+			}
+		}
+
+		function black3run(){
+			let myblack3 = document.getElementById("black3");
+			myblack3.innerHTML=`<img src="cuongthi.jpg" alt="black3" style="width:70px;height:70px;top:${black3.black3top}px;left:${black3.black3left}px;">`;
+			black3.black3left+=50;
+			if (black3.black3left>divwidth-50){
+				black3.black3left=50;
 			}
 		}
 		function check(){
@@ -364,11 +411,30 @@
 				black.blackleft=50;
 				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
 			}
+			else if (hero.left+50==black2.black2left && hero.top==black2.black2top){
+				alert("Thua. Đồ ngu!");
+				score=0;
+				timeout=61;
+				black2.black2left=50;
+				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
+			}
+			else if (hero.left+50==black3.black3left && hero.top==black3.black3top){
+				alert("Thua. Đồ ngu!");
+				score=0;
+				timeout=61;
+				black3.black3left=50;
+				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
+			}
 			else if (timeout==0){
 				alert("Thua. Đồ ngu!");
 				score=0;
 				timeout=61;
-				love.loveleft=50;
+				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
+			}
+			else if (score>=50){
+				alert("Thắng. Good job, bro!");
+				score=0;
+				timeout=61;
 				myghost.innerHTML=`<img src="ghost.png" alt="ghost" style="width: ${hero.size}px;height:${hero.size}px;top:${hero.startpointtop()}px;left:${hero.startpointleft()}px;">`;
 			}
 			else if (hero.left==cuongthileft+50 && hero.top==cuongthitop && cuongthistatus==true) 
@@ -452,19 +518,21 @@
 			let catint = setInterval(catrun,time);
 		}
 		let scoreint = setInterval(showscore,1);
-		let catint = setInterval(catrun,500);
-		let typeint = setInterval(typerun,1000);
-		let meo2int = setInterval(meo2run,100);
-		let choint = setInterval(chorun,200);
+		let catint = setInterval(catrun,50);
+		let typeint = setInterval(typerun,180);
+		let meo2int = setInterval(meo2run,120);
+		let choint = setInterval(chorun,80);
 		let gaiint = setInterval(gairun,200);
-		let setint = setInterval(setrun,150);
-		let lightint = setInterval(lightrun,350);
-		let roseint = setInterval(roserun,150);
+		let setint = setInterval(setrun,110);
+		let lightint = setInterval(lightrun,140);
+		let roseint = setInterval(roserun,60);
 		let loveint = setInterval(loverun,150);
 		let blackint = setInterval(blackrun,50);
+		let black2int = setInterval(black2run,200);
+		let black3int = setInterval(black3run,150);
 		let checkint = setInterval(check,1);
 		let cuongthishowint = setInterval(cuongthishow,2000);
-		let cuongthifadeint = setInterval(cuongthifade,500);
+		let cuongthifadeint = setInterval(cuongthifade,1000);
 		let cuongthinofadeint = setInterval(cuongthinofade,3000);
 		let resetheropositionint = setInterval(resetheroposition,1);
 		let timeoutint = setInterval(showtime,1000);
