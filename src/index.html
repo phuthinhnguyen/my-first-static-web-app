@@ -19,14 +19,23 @@
 		
 			
 		}
-		#score, #time{
+		#score, #time, #howtoplay {
 			float: left;
 			color: white;
 			font-size: 50px;
 			margin-left:100px;
 			margin-top: 20px;
 			margin-right: 50px;
-			
+		}
+		
+		#rule{
+			display: block;
+			float: left;
+			color: white;
+			font-size: large;
+		}
+		#howtoplay:hover{
+			cursor: pointer;
 		}
 		#ghost {
 			filter: drop-shadow(10px 10px 10px red);
@@ -34,7 +43,6 @@
 		#cuongthi{
 			filter: drop-shadow(10px 10px 10px red);
 		}
-
 
 
     </style>
@@ -59,15 +67,33 @@
 		</div>
 		<div id="score">Score: 0</div>
 		<div id="time">Time: 0</div>
+		<div id="howtoplay" onclick="hoverhowtoplay()">How to play</div>
+		<div ><pre id="rule">Dùng phím di chuyển chú bé ma màu đỏ chạm vào đầu của cậu ma bự lúc ẩn lúc hiện để ghi điểm.
++ Chỉ chạm lúc cậu ma bự sáng lên mới được tính điểm.
++ Chạm phải các bé ma khác hoặc hết thời gian 60s sẽ bị thua.
++ Có thể chạm vào hình gái xinh để cộng thêm 10s mỗi lần chạm.
++ Thắng khi đạt được 50 điểm.			
+		</pre></div>
 		<audio autoplay>
 			<source src="game.mp3">
 	  </audio>
 
 	<script>
-		 window.onload = function() {
-      var context = new AudioContext();
-    }
-	
+		 window.onload = function() 
+		 {
+      	var context = new AudioContext();
+    	}
+		let click=0;
+		function hoverhowtoplay()
+		{	
+			click+=1;
+			if (click%2!=0){
+				document.getElementById("rule").style.display="none";
+			}
+			else document.getElementById("rule").style.display="block";
+			
+		}
+
 		class Hero{
 			constructor(size,top,left){
 				this.size=size;
@@ -355,6 +381,7 @@
 			}
 		}
 		function check(){
+			document.getElementById("cuongthi").style.filter="drop-shadow(10px 10px 10px red)";
 			if (hero.left+50==cat.catleft && hero.top==cat.cattop){
 				alert("Thua. Đồ ngu!");
 				score=0;
@@ -457,6 +484,8 @@
 			else if (hero.left==cuongthileft+50 && hero.top==cuongthitop && cuongthistatus==true) 
 			{	
 				score++;
+				document.getElementById("cuongthi").style.filter="drop-shadow(10px 10px 10px green)";
+				
 			}
 		}
 		
